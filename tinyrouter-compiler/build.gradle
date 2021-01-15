@@ -6,3 +6,13 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
 }
+
+dependencies {
+    // Google 出品，用于自动注册注解处理器
+    implementation 'com.google.auto.service:auto-service:1.0-rc7'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc7'
+    // square 大厂的杰作，用于便捷的生成 Java 文件
+    implementation 'com.squareup:javapoet:1.13.0'
+
+    implementation project(':tinyrouter-annotation')
+}

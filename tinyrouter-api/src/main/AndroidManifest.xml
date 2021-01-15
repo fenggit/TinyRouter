@@ -2,4 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tinyrouter.api">
 
+    <application>
+        <provider
+            android:name=".TinyRouterInit"
+            android:authorities="${applicationId}.TinyRouterInit"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
 </manifest>

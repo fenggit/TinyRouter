@@ -1,5 +1,9 @@
+include ':module-base'
+include ':module-home'
+include ':module-login'
 include ':tinyrouter-annotation'
 include ':tinyrouter-api'
 include ':tinyrouter-compiler'
 include ':app'
+
 rootProject.name = "TinyRouter"
