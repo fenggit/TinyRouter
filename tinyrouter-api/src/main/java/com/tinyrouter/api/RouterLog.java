@@ -5,6 +5,10 @@ import android.util.Log;
 public class RouterLog {
     public static final String TAG = "router";
 
+    public static void d(String message) {
+        Log.d(TAG, message);
+    }
+
     public static void i(String message) {
         Log.i(TAG, message);
     }

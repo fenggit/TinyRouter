@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'  // 引入kapt
 }
 
 android {
@@ -47,4 +48,7 @@ dependencies {
     implementation project(path: ':module-base')
     implementation project(path: ':module-login')
     implementation project(path: ':module-home')
+
+    // 创建的模块选择的开发语言是kotlin
+    kapt project(':tinyrouter-compiler')
 }
