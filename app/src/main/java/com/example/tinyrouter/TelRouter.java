@@ -1,10 +1,13 @@
 package com.example.tinyrouter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
 import com.tinyrouter.annotation.Router;
+import com.tinyrouter.api.TinyRouter;
+import com.tinyrouter.inject.IUriInjector;
 import com.tinyrouter.inter.IRouterProcessor;
 
 /**
@@ -18,14 +21,14 @@ public class TelRouter implements IRouterProcessor {
     public void process(Context context, Uri uri) {
         Toast.makeText(context, "success:" + uri, Toast.LENGTH_SHORT).show();
 
-        /*IUriInjector injector = ModularHelper.uriInjector(uri);
-        String num = injector.getParam("num");
-        VLog.d("vipabc://tel" + num);
+        IUriInjector injector = TinyRouter.uriInjector(uri);
+        String num = injector.getParam("number");
+
         try {
             Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse("tel:" + num));
             context.startActivity(intent);
         } catch (Exception e) {
-        }*/
+        }
     }
 }

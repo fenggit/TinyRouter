@@ -18,6 +18,7 @@ import android.widget.Toast
 import com.example.login.R
 import com.tinyrouter.annotation.Router
 import com.tinyrouter.annotation.RouterParam
+import com.tinyrouter.api.TinyRouter
 
 @Router(paths = ["myrouter://login"], desc = "登录模块")
 class LoginActivity : AppCompatActivity() {
@@ -31,6 +32,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_login)
+
+        TinyRouter.inject(this)
 
         Toast.makeText(this, "fromwhere ：$fromwhere", Toast.LENGTH_SHORT).show();
 

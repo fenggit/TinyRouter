@@ -48,18 +48,15 @@ class MainActivity : AppCompatActivity() {
 
     fun initView() {
         button_login.setOnClickListener {
-            TinyRouter.navigator(this, "myrouter://home")
-            //TinyRouter.getInstance().navigation("myrouter://home2")
-            //startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+            TinyRouter.navigator(this, "myrouter://login?fromwhere=app")
         }
 
         button_home.setOnClickListener {
-            //startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-            TinyRouter.navigator(this, "myrouter://login")
+            TinyRouter.navigator(this, "myrouter://home")
         }
 
         button_call.setOnClickListener {
-            TinyRouter.navigator(this, "myrouter://tel?number=18221125210")
+            TinyRouter.navigator(this, "myrouter://tel?number=18211125210")
         }
 
         button_fail.setOnClickListener {
