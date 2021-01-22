@@ -1,9 +1,12 @@
 package com.example.home;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.example.base.ILoginManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.tinyrouter.annotation.Router;
+import com.tinyrouter.api.TinyRouter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -27,6 +30,10 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        // 跨模块通信
+        String name = TinyRouter.get(ILoginManager.class).getUserName();
+        Toast.makeText(this, "获取登录模块的用户名：" + name, Toast.LENGTH_SHORT).show();
     }
 
 }
