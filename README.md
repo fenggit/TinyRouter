@@ -1,5 +1,5 @@
 # TinyRouter
-极简，轻量级的路由库
+Android 极简，轻量级的路由库
 
 # 目的
 - 熟悉路由框架的整个流程
@@ -99,34 +99,30 @@ public class LoginManager implements ILoginManager {
   在 src/main 目录下新建 /resources/META-INF/services/javax.annotation.processing.Processor 目录和文件
 
 
-
-``` 
-plugins {
-    id 'kotlin-kapt'
-}
-kapt project(':myrouter-compiler')
-```
-
 ### kotlin 方式
 ``` 
 plugins {
     id 'kotlin-kapt'
 }
-kapt project(':myrouter-compiler')
-```
-
-### java 方式
-``` 
-annotationProcessor project(':myrouter-compiler')
+kapt project(':tinyrouter-compiler')
 ```
 
 生成类路径
 > build/generated/source/kapt/debug/packagename/生成的类名
 exp
 > build/generated/source/kapt/debug/com/simple/modular/compiler/RouterLoader$CodeGenerator.java
->
- 
-###### 参考资料：
+
+### java 方式
+``` 
+annotationProcessor project(':tinyrouter-compiler')
+```
+
+生成类路径
+> build/generated/ap_generated_sources/debug/out/packagename/生成的类名
+exp
+> build/generated/source/kapt/debug/com/simple/modular/compiler/RouterLoader$CodeGenerator.java
+
+# 参考资料：
 > https://juejin.cn/post/6844903923606618126
 > https://www.jianshu.com/p/0d6860def79d
 > https://www.shangmayuan.com/a/6b7ff9f99fe14fe1bb9c19eb.html
